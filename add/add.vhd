@@ -16,9 +16,9 @@ ENTITY add IS
 		result			: OUT	signed(bw - 1 DOWNTO 0);	-- result of the mathematical operation
 		saturated		: OUT	STD_LOGIC							    -- output saturation is active
 	);
-END ENTITY RTL_Add_Sub_2;
+END ENTITY add;
 
-ARCHITECTURE arc OF RTL_Add_Sub_2 IS
+ARCHITECTURE arc OF add IS
 	
 	CONSTANT upper_limit_signed		: SIGNED(bw - 1 DOWNTO 0)	:= NOT SHIFT_LEFT(to_signed(1,bw),bw-1);	-- "0111"
 	CONSTANT lower_limit_signed		: SIGNED(bw - 1 DOWNTO 0)	:= SHIFT_LEFT(to_signed(1,bw),bw-1);		-- "1000"
